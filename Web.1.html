@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREALY CAFÉ- Your Cozy Spot for Coffee & Pastries</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+    <div class="logo-img"https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=300>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Open Sans', sans-serif; background: #FFFFFF; color: #3E2723; line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; color: inherit; }
+        
+        /* Header */
+        header { background: #6F4E37; padding: 20px 0; color: white; position: sticky; top: 0; z-index: 100; }
+        .header-content { max-width: 1100px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 15px; }
+        .logo-img { width: 60px; height: 60px; background: #E64A19; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: bold; color: white; font-family: 'Playfair Display', serif; }
+        .logo-text h1 { font-size: 28px; }
+        .logo-text p { font-size: 12px; opacity: 0.9; }
+        nav a { color: white; margin: 0 15px; font-weight: 600; transition: 0.3s; }
+        nav a:hover { color: #FFB300; }
+        
+        /* Hero */
+        .hero { background: linear-gradient(rgba(62,39,35,0.7), rgba(62,39,35,0.7)), url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1200') center/cover; height: 600px; display: flex; align-items: center; justify-content: center; text-align: center; color: white; }
+        .hero h2 { font-size: 52px; margin-bottom: 15px; }
+        .hero p { font-size: 22px; margin-bottom: 25px; }
+        .btn { padding: 15px 35px; border-radius: 30px; font-weight: 700; cursor: pointer; border: none; display: inline-block; }
+        .btn-orange { background: #E64A19; color: white; }
+        .btn-orange:hover { background: #BF360C; }
+        
+        /* Sections */
+        section { padding: 60px 20px; max-width: 1100px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 38px; color: #6F4E37; margin-bottom: 10px; }
+        .section-subtitle { text-align: center; color: #5D4037; margin-bottom: 40px; }
+        
+        /* Features */
+        .features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; margin-bottom: 50px; }
+        .feature { background: #FAF3E0; padding: 30px 20px; text-align: center; border-radius: 15px; }
+        .feature-icon { font-size: 40px; margin-bottom: 15px; }
+        .feature h3 { color: #6F4E37; margin-bottom: 10px; font-size: 18px; }
+        
+        /* Menu */
+        .menu-section { background: #FAF3E0; padding: 60px 20px; }
+        .menu-container { max-width: 1100px; margin: 0 auto; }
+        .menu-category { margin-bottom: 50px; }
+        .category-title { font-size: 28px; color: #6F4E37; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 3px solid #E64A19; display: flex; align-items: center; gap: 10px; }
+        .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .menu-item { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 3px 15px rgba(0,0,0,0.1); }
+        .menu-img { height: 150px; background: #D7CCC8; }
+        .menu-img img { width: 100%; height: 100%; object-fit: cover; }
+        .menu-info { padding: 20px; }
+        .menu-info h4 { display: flex; justify-content: space-between; color: #3E2723; margin-bottom: 8px; }
+        .menu-info span { color: #E64A19; font-weight: 700; }
+        .menu-info p { color: #5D4037; font-size: 14px; }
+        
+        /* About */
+        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .about-text h2 { color: #6F4E37; font-size: 36px; margin-bottom: 20px; }
+        .about-text p { margin-bottom: 15px; color: #5D4037; }
+        .about-images { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .about-img { height: 200px; background: #D7CCC8; border-radius: 10px; }
+        .about-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
+        
+        /* Contact */
+        .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: center; }
+        .contact-box { background: #FAF3E0; padding: 30px; border-radius: 15px; }
+        .contact-box h3 { color: #6F4E37; margin-bottom: 15px; }
+        
+        /* Footer */
+        footer { background: #3E2723; color: #FAF3E0; padding: 50px 20px 20px; }
+        .footer-content { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .footer-col h3 { color: #FFB300; margin-bottom: 20px; }
+        .footer-col p, .footer-col li { margin-bottom: 10px; color: #D7CCC8; }
+        .footer-bottom { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #5D4037; }
+        
+        @media (max-width: 768px) {
+            .features, .menu-grid, .about-content, .contact-grid, .footer-content { grid-template-columns: 1fr; }
+            .header-content { flex-direction: column; gap: 15px; }
+            .hero h2 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-content">
+                <div class="logo-text">
+                    <div class="menu-img">
+                        <img src="https://i.postimg.cc/7P0bFYkN/1772498820405.jpg" style="width: 300px; height: 150px; object-fit: fill;" alt="Description"></div>
+                    <center><nav>
+                <a href="#home">• Home</a>      
+                <a href="https://www.facebook.com/share/1D7s2ULE1A/">• About</a>
+                <a href="https://www.facebook.com/share/1D7s2ULE1A/">• Contact</a>
+            </nav></center>
+                </div>
+                    
+                  
+                </div>
+        
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">     
+        <div>              
+            <h2>Welcome to Crealy</h2>
+            <p>A place where you can find Peace in your Heart</p>
+            <a href="#menu" class="btn btn-orange">Our Menu</a>
+        </div> 
+    </section>      
+    <!-- FEATURES -->
+    <section>
+        <h2 class="section-title">THE CREALY</h2>
+        <p class="section-subtitle">Experience the difference in every cup</p>
+        <div class="features"
+            <div class="menu-category">
+               
+                <div class="menu-grid">
+                    <div class="menu-item">
+                    </div>
+            <div class="feature"><div class="feature-icon">☕</div><h3>Premium Beans</h3><p>Fresh roasted beans from around the world</p></div>
+            <div class="feature"><div class="feature-icon">🍰</div><h3>Fresh Pastries</h3><p>Baked fresh every morning with love</p></div>
+            <div class="feature"><div class="feature-icon">🌿</div><h3>Cozy Space</h3><p>Free WiFi, comfortable seating</p></div>
+            <div class="feature"><div class="feature-icon">💚</div><h3>Friendly Service</h3><p>We treat you like family</p></div>
+        </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="menu-section" id="menu">
+        <div class="menu-container">
+            <h2 class="section-title">Our Menu</h2>
+            <p class="section-subtitle">Delicious options for everyone</p>
+            <center><h2 class=section-title">Ordering Steps!</h2></center>           
+            <p>1. Select Products: Browse our website and choose the items you'd like to purchase.</p>             
+            <p>2. Access Contact: Click the "About" button at the top of the page.</p>
+            <p>3. Place Order: Send us a message with your complete address and order details (product name, quantity, etc.) and we'll process your order.</p>
+            
+            
+            <!-- COFFEE -->
+            <div class="menu-category">
+                <h3 class="category-title">☕ Coffee</h3>            
+                <div class="menu-grid">                
+                    <div class="menu-item">
+                        <div class="menu-img"><img src="https://images.pexels.com/photos/5461662/pexels-photo-5461662.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Espresso"></div>
+                        <div class="menu-info"><h4>Espresso Shot <span>₱25</span></h4><p>Single Shot of our Signature Espresso</p></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-img"><img src="https://images.unsplash.com/photo-1610632380989-680fe40816c6?w=400&h=400&fit=crop" alt="Americano"></div>
+                        <div class="menu-info"><h4>Americano <span>₱59</span></h4><p>Strong Coffee with Hot Water</p></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-img"><img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=300" alt="Latte"></div>
+                        <div class="menu-info"><h4>Crealy Latte <span>₱109</span></h4><p>Specialty with Steamed Milk and Vanilla</p></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-img"><img src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Cappuccino"></div>
+                        <div class="menu-info"><h4>Cappuccino <span>₱59</span></h4><p>Equality Sweetie, Milk, and Foam</p></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-img"><img src="https://images.unsplash.com/photo-1559496417-e7f25cb247f3?w=400&h=400&fit=crop" alt="Mocha"></div>
+                        <div class="menu-info"><h4>Mocha <span>₱59</span></h4><p>Creamy Chocolate and Whipped Cream</p></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-img"><img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=400&h=400&fit=crop" alt="Macchiato"></div>
+                        <div class="menu-info"><h4>Macchiato <span>₱59</span></h4><p>Smooch with a Splash of Milk Foam</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEA -->
+            <div class="menu-category">
+                <h3 class="category-title">🍵 Tea</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-img"><img src="https://images.pexels.com/photos/12338992/pexels-photo-12338992.jpeg?auto=compress&cs=tinysrgb&w=1260" alt="Green Tea"></div>
+                        <div class="menu-info"><h4>Green Tea <span>₱49</span></h4><p>Refreshing Green Tea</p></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-img"><img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80" alt="Black Tea"></div>
+                        <div class="menu-info"><h4>Black Tea <span>₱49</span></h4><p>Spiced Black Tea </p></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-img"><img src="https://images.pexels.com/photos/8115976/pexels-photo-8115976.jpeg?auto=compress&cs=tinysrgb&w=1260" alt="Chamomile Tea"></div>
+                        <div class="menu-info"><h4>Chamomile Tea<span>₱49</span></h4><p>Premium Herbal with Flowers</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOOD -->
+            <div class="menu-category">
+                <h3 class="category-title">🥐Food</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-img"><img src="https://images.unsplash.com/photo-1530610476181-d83430b64dcd?auto=format&fit=crop&w=800&q=80" alt="Chocolate Croissant"></div>
+                        <div class="menu-info"><h4>Chocolate Croissant <span>₱89</span></h4><p>Filled with Rich Dark Chocolate</p></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-img"><img src="https://images.unsplash.com/photo-1585238342024-78d387f4a707?w=300" alt="Avocado Toast"></div>
+                        <div class="menu-info"><h4>Avocado Toast <span>₱109</span></h4><p>Sourdough with Avocado, Tomatoes, Egg</p></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-img"><img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=300" alt="Sandwich"></div>
+                        <div class="menu-info"><h4>Bacon Egg Sandwich <span>₱99</span></h4><p>Crispy Bacon, Egg, Cheese on Brioche</p></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-img"><img src="https://images.pexels.com/photos/1352264/pexels-photo-1352264.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Bagel"></div>
+                        <div class="menu-info"><h4>Smoked Salmon Bagel <span>₱199</span></h4><p>Nova lox, Cream Cheese, Capers with Fries</p></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-img"><img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=300" alt="Yogurt"></div>
+                        <div class="menu-info"><h4>Greek Yogurt Bowl <span>₱99</span></h4><p>With Granola, Berries, and Honey</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DESSERTS -->
+            <div class="menu-category">
+                <h3 class="category-title">🍰 Desserts</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-img"><img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=300" alt="Cheesecake"></div>
+                        <div class="menu-info"><h4>Cheesecake <span>₱99</span></h4><p>Creamy Filipino style with Raspberry</p></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-img"><img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=300" alt="Brownie"></div>
+                        <div class="menu-info"><h4>Chocolavacake <span>₱89</span></h4><p>Sweetness Melts in your Mouth </p></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-img"><img src="https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Graham"></div>
+                        <div class="menu-info"><h4>Graham Cake<span>₱79</span></h4><p>The Fresh and Sweetness of Graham </p></div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-img"><img src="https://images.pexels.com/photos/1362534/pexels-photo-1362534.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sweet"></div>
+                        <div class="menu-info"><h4>Halo Halo<span>₱79</span></h4><p>Filipino's Refreshing Dessert </p></div>    
+                    </div>
+                    <space>___________________________________________</space>
+                    <footer><center><h2>Web Development Team</h2></center>
+                    <center> <h5>Web Developer © Sadia</h5>
+                        <h5> Project Manager © Quiap </h5>
+                        <h5>Data Analyst © Jaro</h5>
+                        <h5>Data Analyst © Guevarra </h5>
+                        <h5> Web Designer © De Rosas </h5>
+                        <h5>Web Designer © Ilocso </h5>
+                        <h5>Content Writer and Editor © Japus</h5>
+                        <h5>Content Writer and Editor © Gayapa </h5><center/></footer>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <space>___________________________________________</space>
+                        <center><h4>©2026 Crealy Café. All rights reserved.</h4><center/>
+                      
+                  
